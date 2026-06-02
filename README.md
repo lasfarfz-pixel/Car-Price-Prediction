@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-This project applies data analytics and machine learning techniques to predict automobile prices based on vehicle characteristics.
+This project applies data analytics and machine learning techniques to predict automobile prices using technical and categorical vehicle characteristics.
 
-The analysis includes:
+The project covers the complete analytics workflow:
 
 - Data Cleaning
 - Missing Value Treatment
@@ -16,72 +16,140 @@ The analysis includes:
 
 ---
 
-## Dataset Features
+## Dataset Summary
 
-The dataset contains information about:
+| Metric | Value |
+|----------|----------|
+| Original Dataset | 205 Rows |
+| Final Dataset | 201 Rows |
+| Features | 26 Variables |
+| Target Variable | Price |
 
-- Engine Size
-- Horsepower
-- Fuel Type
-- Body Style
-- Drive Wheels
-- Engine Type
-- Fuel Consumption
-- Vehicle Dimensions
-- Vehicle Price (Target Variable)
+Missing values were treated using:
+
+- Mean imputation for numerical variables
+- Mode imputation for categorical variables
 
 ---
 
-## Project Workflow
+## Exploratory Data Analysis
 
-### 1. Data Preprocessing
+### Price Distribution
 
-- Replaced missing values represented by '?'
-- Converted variables to appropriate data types
-- Removed records with missing target values
-- Applied mean and mode imputation
+The majority of vehicles were concentrated in lower and medium price ranges, while a small number of premium vehicles formed a high-value tail.
 
-### 2. Feature Engineering
+![Price Distribution](images/price_distribution.png)
 
-- Created City Fuel Consumption (L/100km)
-- Created Highway Fuel Consumption (L/100km)
-- Binned horsepower into Low, Medium, and High categories
-- Applied Min-Max normalization
+### Horsepower vs Price
 
-### 3. Exploratory Data Analysis (EDA)
+A positive relationship was observed between horsepower and vehicle price. However, horsepower alone was not sufficient to explain pricing differences, suggesting that multiple factors influence vehicle value.
 
-- Price distribution analysis
-- Horsepower distribution analysis
-- Price by body style comparison
-- Correlation heatmap
-- Outlier detection
+![Horsepower vs Price](images/horsepower_vs_price.png)
 
-### 4. Machine Learning Models
+### Correlation Analysis
 
-#### Regression Models
+The strongest relationships with vehicle price were:
+
+| Feature | Correlation |
+|----------|----------|
+| Engine Size | 0.872 |
+| Curb Weight | 0.834 |
+| Horsepower | 0.810 |
+| Highway L/100km | 0.801 |
+| City L/100km | 0.790 |
+
+![Correlation Heatmap](images/heatmap.png)
+
+---
+
+## Machine Learning Models
+
+### Regression Models
+
+Two regression models were developed:
 
 - Linear Regression
 - Random Forest Regressor
 
-#### Classification Model
+### Results
 
-- Logistic Regression
+| Model | R² Score |
+|---------|---------|
+| Linear Regression (80/20) | 0.819 |
+| Random Forest (80/20) | 0.928 |
+| Linear Regression (70/30) | 0.828 |
+| Random Forest (70/30) | 0.920 |
 
-Vehicle prices were categorized into:
+### Best Performing Model
 
-- Low
-- Medium
-- High
+✅ Random Forest Regressor
+
+- R² = 0.928
+- MAE = 1,912
+- RMSE = 2,973
+
+The Random Forest model significantly outperformed Linear Regression, suggesting that automobile pricing contains complex and non-linear relationships.
+
+![Feature Importance](images/feature_importance.png)
 
 ---
 
-## Key Findings
+## Classification Model
 
-- Engine size showed the strongest correlation with vehicle price.
-- Curb weight and horsepower were also strong predictors.
-- Random Forest achieved the best regression performance.
-- Logistic Regression successfully classified vehicles into price categories with high accuracy.
-- Premium vehicles tend to be larger, heavier, and more powerful.
+Vehicle prices were grouped into:
+
+- Low Price
+- Medium Price
+- High Price
+
+A Logistic Regression model was trained to classify vehicles into these categories.
+
+### Classification Results
+
+- Accuracy: 90.2%
+
+![Confusion Matrix](images/confusion_matrix.png)
+
+---
+
+## My Analysis
+
+One of the most interesting findings from this project was that vehicle price is not determined by a single characteristic.
+
+While horsepower is often associated with expensive vehicles, the analysis demonstrated that engine size, vehicle weight, fuel consumption, and vehicle dimensions collectively play a significant role in determining market value.
+
+The Random Forest model substantially outperformed Linear Regression, indicating that vehicle pricing contains complex interactions between multiple variables. This highlights the importance of selecting models capable of capturing non-linear relationships when solving real-world business problems.
+
+---
+
+## My Recommendations
+
+Based on the analysis, I would recommend:
+
+### For Manufacturers
+
+- Focus on engine size, horsepower, and vehicle weight when developing premium product segments.
+- Use predictive analytics to evaluate pricing strategies before launching new models.
+
+### For Dealerships
+
+- Use machine learning models to assess whether listed vehicle prices align with technical specifications.
+- Improve inventory planning by identifying high-value vehicle characteristics.
+
+### For Customers
+
+- Compare market prices against model predictions to identify potentially overpriced or undervalued vehicles.
+- Consider multiple vehicle attributes rather than relying on horsepower alone when evaluating value.
+
+---
+
+## Personal Reflection
+
+This project strengthened my understanding of the complete data analytics lifecycle, from raw data preparation through to business-focused recommendations.
+
+The most valuable lesson was learning that successful analytics projects are not only about building accurate models. They also require critical thinking, business interpretation, and the ability to communicate technical findings to non-technical audiences.
+
+The project demonstrated how machine learning can be used as a practical decision-support tool for pricing, market segmentation, and business strategy.
 
 ---
 
@@ -97,39 +165,7 @@ Vehicle prices were categorized into:
 
 ---
 
-## Repository Contents
-
-```text
-car-price-prediction
-│
-├── Car_Price_Prediction.ipynb
-├── README.md
-```
-## My Analysis and Recommendations
-
-Based on the results of this project, I believe that vehicle price is influenced by a combination of technical, performance, and design-related factors rather than a single feature.
-
-The analysis showed that engine size, curb weight, and horsepower were the strongest predictors of price. This suggests that consumers are generally willing to pay a premium for larger, more powerful vehicles that offer higher performance.
-
-From a business perspective, manufacturers and dealerships can use predictive analytics to support pricing decisions, market segmentation, and inventory planning. Understanding which features contribute most to vehicle value can help organizations design products that better match customer expectations and market demand.
-
-### Recommendations
-
-- Use machine learning models such as Random Forest to support pricing decisions, as they can capture complex relationships between vehicle characteristics and price.
-- Focus on key value-driving features such as engine size, horsepower, and vehicle weight when developing premium vehicle segments.
-- Combine predictive model outputs with market knowledge rather than relying solely on automated predictions.
-- Collect additional variables such as vehicle age, mileage, brand reputation, maintenance history, and market demand to improve future model performance.
-- Apply cross-validation and hyperparameter tuning in future work to further improve model reliability and generalisation.
-
-### Personal Reflection
-
-This project strengthened my understanding of the complete data analytics workflow, including data cleaning, feature engineering, exploratory data analysis, machine learning model development, and business interpretation.
-
-One of the most valuable lessons from this project was that building a predictive model is not only about achieving high accuracy. It is equally important to understand the business context, evaluate model limitations, and communicate findings in a way that supports decision-making.
-
-The project also demonstrated how data-driven approaches can be used to solve real-world business problems and generate actionable insights from data.
----
-
 ## Author
 
-Lasfar fatima ezzahra
+**Fatima Ezzahra Lasfar**
+
