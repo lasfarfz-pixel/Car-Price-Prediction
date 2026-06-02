@@ -58,7 +58,7 @@ The strongest relationships with vehicle price were:
 | Highway L/100km | 0.801 |
 | City L/100km | 0.790 |
 
-![Correlation Heatmap](images/heatmap.png)
+![Correlation Heatmap](images/correlation.png)
 
 ---
 
@@ -90,7 +90,7 @@ Two regression models were developed:
 
 The Random Forest model significantly outperformed Linear Regression, suggesting that automobile pricing contains complex and non-linear relationships.
 
-![Feature Importance](images/feature_importance.png)
+![Feature Importance](images/feature_importances.png)
 
 ---
 
