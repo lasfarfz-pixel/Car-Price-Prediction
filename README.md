@@ -102,9 +102,8 @@ Vehicle prices were categorized into:
 ```text
 car-price-prediction
 │
-├── FDA_Car_Price_Prediction.ipynb
+├── Car_Price_Prediction.ipynb
 ├── README.md
-└── images/
 ```
 ## My Analysis and Recommendations
 
