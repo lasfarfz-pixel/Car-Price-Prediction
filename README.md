@@ -1,4 +1,5 @@
-# Car Price Prediction Using Data Analytics and Machine Learning
+#  MSC Data Analytics:
+FDA Assignment: Car Price Prediction Using Data Analytics and Machine Learning
 
 ## Project Overview
 
@@ -29,6 +30,9 @@ Missing values were treated using:
 
 - Mean imputation for numerical variables
 - Mode imputation for categorical variables
+
+Question marks were replaced with missing values and all records with no target variable were removed, leaving 201 valid 
+observations for modelling
 
 ---
 
@@ -168,4 +172,8 @@ The project demonstrated how machine learning can be used as a practical decisio
 ## Author
 
 **Fatima Ezzahra Lasfar**
+
+## Tutor: 
+Dr Mohammad Nilchiyan
+
 
