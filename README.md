@@ -174,6 +174,6 @@ The project demonstrated how machine learning can be used as a practical decisio
 **Fatima Ezzahra Lasfar**
 
 ## Tutor: 
-Dr Mohammad Nilchiyan
+**Dr Mohammad Nilchiyan**
 
 
