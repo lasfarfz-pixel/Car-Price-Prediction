@@ -118,7 +118,7 @@ A Logistic Regression model was trained to classify vehicles into these categori
 
 ## My Analysis
 
-One of the most interesting findings from this project was that vehicle price is not determined by a single characteristic.
+What's really interesting about this project is that it showed us how the price of a vehicle isn't just about one thing - there are lots of factors at play.
 
 While horsepower is often associated with expensive vehicles, the analysis demonstrated that engine size, vehicle weight, fuel consumption, and vehicle dimensions collectively play a significant role in determining market value.
 
@@ -145,12 +145,12 @@ Based on the analysis, I would recommend:
 - Compare market prices against model predictions to identify potentially overpriced or undervalued vehicles.
 - Consider multiple vehicle attributes rather than relying on horsepower alone when evaluating value.
 
+
 ---
 
 ## Personal Reflection
 
-This project strengthened my understanding of the complete data analytics lifecycle, from raw data preparation through to business-focused recommendations.
-
+This project strengthened my understanding of the complete data analytics process, from getting the raw data ready to making recommendations that can actually help businesses.
 The most valuable lesson was learning that successful analytics projects are not only about building accurate models. They also require critical thinking, business interpretation, and the ability to communicate technical findings to non-technical audiences.
 
 The project demonstrated how machine learning can be used as a practical decision-support tool for pricing, market segmentation, and business strategy.
